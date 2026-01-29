@@ -1,6 +1,11 @@
 FROM node:20-slim
 
-RUN apt-get update && apt-get install -y tectonic
+# install curl + unzip
+RUN apt-get update && apt-get install -y curl unzip
+
+# install tectonic manually (official binary)
+RUN curl -L https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-unknown-linux-gnu.tar.gz \
+    | tar -xz -C /usr/local/bin
 
 WORKDIR /app
 
