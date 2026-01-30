@@ -1,8 +1,8 @@
-FROM node:20-slim
+FROM node:18
 
-# install minimal LaTeX (stable, from Debian repo)
+# install latex
 RUN apt-get update && \
-    apt-get install -y texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
+    apt-get install -y texlive-latex-base texlive-latex-extra
 
 WORKDIR /app
 
@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
