@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/meAnkit18/LatexCompiler/issues"
   },
-  "homepage": "https://github.com/meAnkit18/LatexCompiler#readme"
+  "homepage": "https://github.com/meAnkit18/LatexCompiler#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
