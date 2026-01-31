@@ -1,11 +1,9 @@
-# Stage 1 — get tectonic binary
-FROM ghcr.io/tectonic-typesetting/tectonic:latest AS tectonic
-
-# Stage 2 — your app
 FROM node:20-slim
 
-# copy tectonic binary only
-COPY --from=tectonic /usr/local/bin/tectonic /usr/local/bin/tectonic
+# install tectonic directly from debian repo
+RUN apt-get update && \
+    apt-get install -y tectonic && \
+    apt-get clean
 
 WORKDIR /app
 
